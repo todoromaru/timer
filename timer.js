@@ -1,5 +1,5 @@
 let timer;
-let seconds = 0; // ‰Šú’l‚Í0•b
+let seconds = 0; // åˆæœŸå€¤ã¯0ç§’
 
 document.getElementById('startButton').addEventListener('click', function() {
     unlockAudio();
@@ -16,7 +16,7 @@ function unlockAudio() {
             audio.currentTime = 0;
         }).catch(() => {});
     });
-    // ƒCƒxƒ“ƒgƒŠƒXƒi[‚ğíœ
+    // ã‚¤ãƒ™ãƒ³ãƒˆãƒªã‚¹ãƒŠãƒ¼ã‚’å‰Šé™¤
     document.body.removeEventListener('touchstart', unlockAudio, false);
 }
 
