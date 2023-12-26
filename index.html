@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="SHIFT_JIS">
+    <title>カスタマイズ可能なタイマー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="timerDisplay">00:00</div>
+
+    <input type="number" id="minutesInput" placeholder="分" min="1" max="120">
+    <button id="setTimerButton">タイマー設定</button>
+
+    <div id="alerts">
+        <label><input type="checkbox" id="alert1min" checked> 1分前</label>
+        <label><input type="checkbox" id="alert5min" checked> 5分前</label>
+        <label><input type="checkbox" id="alert10min" checked> 10分前</label>
+        <label><input type="checkbox" id="alert15min" checked> 15分前</label>
+    </div>
+
+    <button id="startButton">スタート</button>
+    <button id="stopButton">ストップ</button>
+    <button id="resetButton">リセット</button>
+
+    <audio id="finalAlertSound" src="final-alert.wav" preload="auto"></audio>
+    <audio id="alert1minSound" src="alert1min.wav" preload="auto"></audio>
+    <audio id="alert5minSound" src="alert5min.wav" preload="auto"></audio>
+    <audio id="alert10minSound" src="alert10min.wav" preload="auto"></audio>
+    <audio id="alert15minSound" src="alert15min.wav" preload="auto"></audio>
+
+    <script src="timer.js"></script>
+</body>
+</html>

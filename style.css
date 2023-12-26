@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#timerDisplay {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    margin-bottom: 10px;
+}
+
+#alerts {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
