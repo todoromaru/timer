@@ -37,7 +37,7 @@ function startTimer() {
                 checkAlerts();
             } else {
                 stopTimer();
-                playFinalAlertSound(); // タイマー終了時のアラームを鳴らす
+                playFinalAlertSound();
             }
         }, 1000);
     }
@@ -69,4 +69,17 @@ function checkAlerts() {
     if (document.getElementById('alert5min').checked && seconds === 5 * 60) {
         document.getElementById('alert5minSound').play();
     }
-   
+    if (document.getElementById('alert10min').checked && seconds === 10 * 60) {
+        document.getElementById('alert10minSound').play();
+    }
+    if (document.getElementById('alert15min').checked && seconds === 15 * 60) {
+        document.getElementById('alert15minSound').play();
+    }
+}
+
+function playFinalAlertSound() {
+    const finalAlertSound = document.getElementById('finalAlertSound');
+    finalAlertSound.play();
+}
+
+updateDisplay();
