@@ -1,10 +1,26 @@
 let timer;
 let seconds = 0; // 初期値は0秒
 
-document.getElementById('startButton').addEventListener('click', startTimer);
+document.getElementById('startButton').addEventListener('click', function() {
+    unlockAudio();
+    startTimer();
+});
 document.getElementById('stopButton').addEventListener('click', stopTimer);
 document.getElementById('resetButton').addEventListener('click', resetTimer);
 document.getElementById('setTimerButton').addEventListener('click', setTimer);
+
+function unlockAudio() {
+    document.querySelectorAll('audio').forEach(audio => {
+        audio.play().then(() => {
+            audio.pause();
+            audio.currentTime = 0;
+        }).catch(() => {});
+    });
+    // イベントリスナーを削除
+    document.body.removeEventListener('touchstart', unlockAudio, false);
+}
+
+document.body.addEventListener('touchstart', unlockAudio, false);
 
 function updateDisplay() {
     let minutes = Math.floor(seconds / 60);
@@ -53,17 +69,4 @@ function checkAlerts() {
     if (document.getElementById('alert5min').checked && seconds === 5 * 60) {
         document.getElementById('alert5minSound').play();
     }
-    if (document.getElementById('alert10min').checked && seconds === 10 * 60) {
-        document.getElementById('alert10minSound').play();
-    }
-    if (document.getElementById('alert15min').checked && seconds === 15 * 60) {
-        document.getElementById('alert15minSound').play();
-    }
-}
-
-function playFinalAlertSound() {
-    const finalAlertSound = document.getElementById('finalAlertSound');
-    finalAlertSound.play();
-}
-
-updateDisplay();
+   
